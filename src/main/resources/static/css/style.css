@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.container {width: 100%; max-width: 800px; margin: 50px auto; padding: 30px 20px;}
+
+.section1 h1 {margin-bottom: 50px; position: relative; font-size: 2rem; text-align: center; font-weight: 700;}
+.section1 h1::before {content: ''; width: 10px; height: 10px; background-color: #00ff00; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); border-radius: 50%; animation: blink 1.5s infinite;}
+.section1 form {margin-bottom: 60px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;}
+.section1 form input {flex: 0.97 1 auto; min-width: 200px; padding: 0.6rem 1rem; border: 1px solid #ccc; border-radius: 8px; outline: none; transition: border-color 0.3s, box-shadow 0.3s; background-color: #f9f9f9;}
+.section1 form input::placeholder {color: #aaa; transition: opacity 0.3s ease;}
+.section1 form input:focus::placeholder {opacity: 0;}
+.section1 form button {flex: 0 0 auto; padding: 12px 20px; background-color: #87ceeb; color: white; border: none; border-radius: 8px; font-size: 16px; font-family: 'Nanum Gothic', sans-serif; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
+.section1 form button:hover {background-color: #00aeee; transform: translateY(-2px);}
+.section1 .todo-table {width: 100%; border-collapse: collapse; margin-top: 20px;}
+.section1 .todo-table th, .todo-table td {padding: 12px; text-align: center; border-bottom: 1px solid #ccc;}
+.section1 .todo-table tbody tr:hover {background-color: rgba(135, 206, 235, 0.3);}
+.section1 .todo-table th {font-weight: bold;}
+.section1 .todo-table tbody tr td:nth-child(2) {text-align: left; padding: 0 30px; !important;}
+.section1 .completed {text-decoration: line-through; color: #999;}
+.section1 .delete-btn {background: none; border: none; color: #888; cursor: pointer; font-size: 16px; transition: color 0.3s ease;}
+.section1 .delete-btn:hover {color: #ff4d4d;}
+.section1 .delete-btn {background: none; border: none; color: #888; cursor: pointer; margin-left: 10px; font-size: 16px; transition: color 0.3s ease;}
+.section1 .delete-btn:hover {color: #ff4d4d;}
+
+@keyframes blink {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0.3;}
+}
+
+/* midea Query */
+@media (max-width: 768px) {
+    .section1 form {flex-direction: column; align-items: stretch;}
+    .section1 form input {margin-bottom: 10px; height: 22px;}
+}
